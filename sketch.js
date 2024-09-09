@@ -2,12 +2,15 @@ let cells = [];
 let w = 10;
 let y = 0;
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(410, 410);
   let total = width / w;
   // randomly select initial state of cells
   for (let i = 0; i < total; i++) {
-    cells[i] = floor(random(2));
+    // make all cells initial state 0 as wolfram would do
+    cells[i] = 0;
   }
+  // only middle cell has state of 1
+  cells[floor(total/2)] = 1;
   background(255);
 }
 
