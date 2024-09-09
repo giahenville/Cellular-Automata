@@ -14,6 +14,7 @@ function draw() {
     square(x, 0, w)
   }
 
+  // generate next gen
   let nextGen = [];
   for (let i = 1; i < cells.length - 1; i++) {
     let left = cells[i - 1];
@@ -25,3 +26,15 @@ function draw() {
   }
   cells = nextGen;
 };
+
+// calculate new cell state based on arbitrary rules
+function calculateState(a, b, c) {
+  if (a === 1 && b === 1 && c === 1) return 1;
+  if (a === 1 && b === 1 && c === 0) return 0;
+  if (a === 1 && b === 0 && c === 1) return 1;
+  if (a === 1 && b === 0 && c === 0) return 1;
+  if (a === 0 && b === 1 && c === 1) return 0;
+  if (a === 0 && b === 1 && c === 0) return 0;
+  if (a === 0 && b === 0 && c === 1) return 1;
+  if (a === 0 && b === 0 && c === 0) return 0;
+}
