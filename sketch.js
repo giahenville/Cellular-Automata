@@ -6,7 +6,7 @@ function setup() {
   let total = width / w;
   // randomly select initial state of cells
   for (let i = 0; i < total; i++) {
-    // make all cells initial state 0 as wolfram would do
+    // make all cells initial state 0 as in elementary wolfram CA 
     cells[i] = 0;
   }
   // only middle cell has state of 1
